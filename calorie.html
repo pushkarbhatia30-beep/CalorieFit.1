@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f7fc">
+  <title>CalorieFit by Mitali</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- SIGN-UP PAGE -->
+  <section id="signup-page" class="signup-page">
+    <div class="signup-brand">
+      <div class="brand-icon">🥗</div>
+      <h1>CalorieFit <span>by Mitali</span></h1>
+      <p>Your journey to a healthier you starts here.</p>
+    </div>
+
+    <form id="signup-form" class="signup-card">
+      <div class="form-heading">
+        <p class="eyebrow">WELCOME TO CALORIEFIT</p>
+        <h2>Create your profile ✨</h2>
+        <p>Tell us a little about yourself.</p>
+      </div>
+
+      <label for="full-name">Full name</label>
+      <input id="full-name" name="name" type="text"
+        placeholder="Enter your full name"
+        maxlength="80" autocomplete="name" required>
+
+      <label for="email">Email address</label>
+      <input id="email" name="email" type="email"
+        placeholder="you@example.com"
+        autocomplete="email" required>
+
+      <div class="form-row">
+        <div>
+          <label for="age">Age</label>
+          <input id="age" name="age" type="number"
+            placeholder="e.g. 20" min="13" max="120" required>
+        </div>
+        <div>
+          <label for="gender">Gender</label>
+          <select id="gender" name="gender" required>
+            <option value="">Select</option>
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
+            <option value="Other">Other</option>
+            <option value="Prefer not to say">Prefer not to say</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div>
+          <label for="height">Height (cm)</label>
+          <input id="height" name="height" type="number"
+            placeholder="e.g. 170" min="50" max="260" required>
+        </div>
+        <div>
+          <label for="weight">Weight (kg)</label>
+          <input id="weight" name="weight" type="number"
+            placeholder="e.g. 65" min="10" max="500"
+            step="0.1" required>
+        </div>
+      </div>
+
+      <label for="fitness-goal">Your fitness goal</label>
+      <select id="fitness-goal" name="goal" required>
+        <option value="">Choose your goal</option>
+        <option value="Lose weight">Lose weight</option>
+        <option value="Maintain weight">Maintain weight</option>
+        <option value="Build muscle">Build muscle</option>
+        <option value="Improve fitness">Improve fitness</option>
+      </select>
+
+      <button type="submit" class="btn btn-primary">
+        Create My Profile →
+      </button>
+
+      <p class="privacy-note">
+        💚 Your profile is saved locally in this browser.
+      </p>
+      <p id="signup-error" class="error-message" role="alert"></p>
+    </form>
+    <p class="copyright">CalorieFit by Mitali © 2026</p>
+  </section>
+
+  <!-- DASHBOARD PAGE -->
+  <div id="dashboard-page" class="app hidden">
+    <aside class="sidebar">
+      <h2 class="brand">🥗 CalorieFit</h2>
+      <p class="side-label">MENU</p>
+      <a href="#dashboard" class="nav-link active">⌂ Dashboard</a>
+      <a href="#food-section" class="nav-link">🍎 Food Tracker</a>
+      <a href="#workout-section" class="nav-link">🏃 Workout Tracker</a>
+
+      <div class="sidebar-note">
+        <span>💚</span>
+        <h3>Small steps,<br>big results!</h3>
+        <p>Build healthy habits every day.</p>
+      </div>
+    </aside>
+
+    <main class="main-content" id="dashboard">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">YOUR PERSONAL FITNESS SPACE</p>
+          <h1>Hi, <span id="user-name">User</span>! 👋</h1>
+          <p id="today-date" class="muted"></p>
+        </div>
+
+        <div class="profile-actions">
+          <div id="user-avatar" class="avatar">U</div>
+          <button id="logout-btn" type="button" class="logout-btn">
+            Log out
+          </button>
+        </div>
+      </header>
+
+      <section class="profile-strip">
+        <div>
+          <span>🎯 Your goal</span>
+          <strong id="user-goal">Improve fitness</strong>
+        </div>
+        <div>
+          <span>🎂 Age</span>
+          <strong id="user-age">--</strong>
+        </div>
+        <div>
+          <span>📏 Height</span>
+          <strong id="user-height">-- cm</strong>
+        </div>
+        <div>
+          <span>⚖️ Weight</span>
+          <strong id="user-weight">-- kg</strong>
+        </div>
+      </section>
+
+      <section class="welcome">
+        <div>
+          <p class="eyebrow">YOUR DAILY JOURNEY</p>
+          <h2>Stay healthy, stay consistent! 🌱</h2>
+          <p>Track your meals and workouts in one place.</p>
+        </div>
+        <div class="welcome-icon">💪</div>
+      </section>
+
+      <section class="summary-grid">
+        <article class="summary-card">
+          <div class="card-top">
+            <span>Calories Consumed</span>
+            <span class="icon-box orange">🍎</span>
+          </div>
+          <h2 id="consumed">0</h2>
+          <p>kcal eaten today</p>
+        </article>
+
+        <article class="summary-card">
+          <div class="card-top">
+            <span>Calories Burned</span>
+            <span class="icon-box green">🔥</span>
+          </div>
+          <h2 id="burned">0</h2>
+          <p>kcal burned today</p>
+        </article>
+
+        <article class="summary-card">
+          <div class="card-top">
+            <span>Calories Remaining</span>
+            <span class="icon-box blue">🎯</span>
+          </div>
+          <h2 id="remaining">2000</h2>
+          <p>based on your daily goal</p>
+        </article>
+      </section>
+
+      <section class="goal-card">
+        <div class="goal-header">
+          <div>
+            <p class="eyebrow">DAILY CALORIE GOAL</p>
+            <h2><span id="goal-display">2000</span> kcal</h2>
+          </div>
+          <label class="goal-input">
+            Daily goal
+            <input id="goal-input" type="number"
+              min="1" max="10000" value="2000">
+          </label>
+        </div>
+        <div class="progress-track">
+          <div id="progress-bar" class="progress-bar"></div>
+        </div>
+        <div class="progress-labels">
+          <span id="progress-text">0% completed</span>
+          <span id="goal-status">Keep going!</span>
+        </div>
+      </section>
+
+      <section class="tracker-grid">
+        <article class="panel" id="food-section">
+          <div class="panel-heading">
+            <h2>🍎 Food Tracker</h2>
+            <p>Add your meals and snacks.</p>
+          </div>
+
+          <form id="food-form" class="tracker-form">
+            <label for="food-name">Food name</label>
+            <input id="food-name" type="text"
+              placeholder="e.g. Paneer sandwich"
+              maxlength="80" required>
+
+            <label for="food-calories">Calories (kcal)</label>
+            <input id="food-calories" type="number"
+              placeholder="e.g. 300" min="1" max="10000" required>
+
+            <label for="meal-type">Meal type</label>
+            <select id="meal-type">
+              <option>Breakfast</option>
+              <option>Lunch</option>
+              <option>Dinner</option>
+              <option>Snack</option>
+            </select>
+
+            <button type="submit" class="btn btn-orange">
+              + Add Food
+            </button>
+          </form>
+
+          <div class="list-heading">
+            <h3>Today's meals</h3>
+            <span id="food-count" class="count-badge">0 items</span>
+          </div>
+          <div id="food-list" class="activity-list"></div>
+        </article>
+
+        <article class="panel" id="workout-section">
+          <div class="panel-heading">
+            <h2>🏃 Workout Tracker</h2>
+            <p>Record your physical activity.</p>
+          </div>
+
+          <form id="workout-form" class="tracker-form">
+            <label for="workout-name">Exercise name</label>
+            <input id="workout-name" type="text"
+              placeholder="e.g. Running"
+              maxlength="80" required>
+
+            <label for="workout-calories">Calories burned (kcal)</label>
+            <input id="workout-calories" type="number"
+              placeholder="e.g. 250" min="1" max="10000" required>
+
+            <label for="workout-duration">Duration (minutes)</label>
+            <input id="workout-duration" type="number"
+              placeholder="e.g. 30" min="1" max="1440" required>
+
+            <button type="submit" class="btn btn-green">
+              + Add Workout
+            </button>
+          </form>
+
+          <div class="list-heading">
+            <h3>Today's workouts</h3>
+            <span id="workout-count" class="count-badge">0 items</span>
+          </div>
+          <div id="workout-list" class="activity-list"></div>
+        </article>
+      </section>
+
+      <footer>
+        CalorieFit by Mitali © 2026 · Your wellness, your journey 💚
+        <p>Calorie values are estimates and individual needs vary.</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
